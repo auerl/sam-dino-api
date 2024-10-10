@@ -1,0 +1,18 @@
+[Unit]
+Description=FastAPI
+After=multi-user.target
+[Service]
+User=ubuntu
+Group=ubuntu
+Type=simple
+Restart=always
+WorkingDirectory=/home/ubuntu
+ExecStart=/home/ubuntu/env/bin/gunicorn main:app -k uvicorn.workers.UvicornWorker -w 3
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+RestartSec=1
+Restart=always
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+pystan==3.7.0
+fastapi==0.95.2
+uvicorn==0.22.0
+cython==0.29.35
+numpy==1.24.3
+pandas==2.0.1
+gunicorn==20.1.0
+torch==2.0.1
+torchvision==0.15.2
+supervision==0.6.0
+requests==2.31.0
